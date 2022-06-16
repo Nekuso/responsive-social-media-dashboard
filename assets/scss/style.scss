@@ -33,6 +33,7 @@ $VeryDarkBlueText: hsl(230, 17%, 14%);
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Inter';
+    -webkit-tap-highlight-color: transparent;
 
     &:focus {
         outline: none !important;
@@ -41,8 +42,14 @@ $VeryDarkBlueText: hsl(230, 17%, 14%);
 }
 
 body{
-    background: $WhiteBG;
-    transition: .4s ease-in-out;
+    background: linear-gradient(
+        to bottom,
+        $VeryPaleBlueTopBGPattern 0%,
+        $VeryPaleBlueTopBGPattern 10%,
+        $WhiteBG 10%,
+        $WhiteBG 100%
+    );
+    --webkit-transition: .4s ease-in-out;
 }
 
 img {
@@ -50,7 +57,13 @@ img {
 }
 
 .dark__mode {
-    background: $VeryDarkBlueBG;
+    background: linear-gradient(
+        to bottom,
+        $VeryDarkBlueTopBGPattern 0%,
+        $VeryDarkBlueTopBGPattern 10%,
+        $VeryDarkBlueBG 10%,
+        $VeryDarkBlueBG 100%
+    );
     transition: .4s ease-in-out;
 
     .wrapper {
@@ -346,6 +359,27 @@ img {
 
 // LAPTOP SIZE
 @media screen and (min-width: 728px){
+
+    .dark__mode {
+        background: linear-gradient(
+            to bottom,
+            $VeryDarkBlueTopBGPattern 0%,
+            $VeryDarkBlueTopBGPattern 30%,
+            $VeryDarkBlueBG 30%,
+            $VeryDarkBlueBG 100%
+        );
+        transition: .4s ease-in-out;
+    }
+
+    body{
+        background: linear-gradient(
+            to bottom,
+            $VeryPaleBlueTopBGPattern 0%,
+            $VeryPaleBlueTopBGPattern 30%,
+            $WhiteBG 30%,
+            $WhiteBG 100%
+        );
+    }
     .wrapper {
         max-width: 85vw;
 
