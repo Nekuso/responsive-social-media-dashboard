@@ -1,6 +1,6 @@
 # Responsive Social Media Dashboard
 
-- Live Site URL: [https://nekuso.github.io/responsive-todo-app-website/](https://nekuso.github.io/responsive-todo-app-website/)
+- Live Site URL: [https://nekuso.github.io/responsive-social-media-dashboard/](https://nekuso.github.io/responsive-social-media-dashboard/)
 
 ### Responsive Social Media 
 
