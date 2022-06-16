@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+// Primary
+$LimeGreen: hsl(163, 72%, 41%);
+$BrightRed: hsl(356, 69%, 56%);
+
+$Facebook: hsl(208, 92%, 53%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram: linear-gradient(to right, #fdc468, #ffa263, #ff806c, #f9607f, #df4996);
+$YouTube: hsl(348, 97%, 39%);
+
+// #### Dark Theme
+
+$VeryDarkBlueBG: hsl(230, 17%, 14%);
+$VeryDarkBlueTopBGPattern: hsl(232, 19%, 15%);
+$DarkDesaturatedBlueCardBG: hsl(228, 28%, 20%);
+$DesaturatedBlueText: hsl(228, 34%, 66%);
+$WhiteText: hsl(0, 0%, 100%);
+
+// #### Light Theme
+
+$WhiteBG: hsl(0, 0%, 100%);
+$VeryPaleBlueTopBGPattern: hsl(225, 100%, 98%);
+$LightGrayishBlueCardBG: hsl(227, 47%, 96%);
+$DarkGrayishBlueText: hsl(228, 12%, 44%);
+$VeryDarkBlueText: hsl(230, 17%, 14%);
+
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Inter';
+
+    &:focus {
+        outline: none !important;
+    }
+    
+}
+
+body{
+    background: $WhiteBG;
+    transition: .4s ease-in-out;
+}
+
+img {
+    max-width: 100%;
+}
+
+.dark__mode {
+    background: $VeryDarkBlueBG;
+    transition: .4s ease-in-out;
+
+    .wrapper {
+        .header{
+            color: $WhiteText;
+            transition: .4s ease-in-out;
+        }
+        
+        .socials__container {
+            .block__class {
+                .card {
+                    background: $DarkDesaturatedBlueCardBG;
+                    transition: .4s ease-in-out;
+                    
+                    &:hover {
+                        background: rgb(56, 64, 99);
+                        transition: .4s ease-in-out;
+                    }
+                    
+                    .followers {
+                        h1 {
+                            color:  $WhiteText;
+                            transition: .4s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+
+        .overview__container {
+            .overview {
+                background: $DarkDesaturatedBlueCardBG;
+                transition: .4s ease-in-out;
+                
+                &:hover {
+                    background: rgb(56, 64, 99);
+                    transition: .4s ease-in-out;
+                }
+                
+                .overview__results {
+                    h2 {
+                        color: $WhiteText;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.wrapper {
+    max-width: 395px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+
+    // HEADER
+    .header {
+        display: grid;
+        margin-bottom: 1.5rem;
+
+        .header__left {
+            h4 {
+                color: $DarkGrayishBlueText;
+            }
+        }
+
+        hr {
+            margin: 1.2rem 0;
+            border: none;
+            border-top: 1px solid $DarkGrayishBlueText;
+        }
+
+        .header__right{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+
+            h4 {
+                color: $DarkGrayishBlueText;
+            }
+
+            // TOGGLE SWITCH
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 30px;
+                margin: 0 5px;
+
+                .slider {
+                    margin: 0;
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: $DarkGrayishBlueText;
+                    transition: .4s ease-in-out;
+                    border-radius: 34px;
+                }
+
+                input {
+                    display: none;
+                }
+
+                .slider:before {
+                    position: absolute;
+                    content: "";
+                    height: 23px;
+                    width: 23px;
+                    left: 4px;
+                    bottom: 13%;
+                    background: $WhiteBG;
+                    transition: .4s ease-in-out;
+                    border-radius: 50px;
+                }
+
+                input:checked + .slider {
+                    background: linear-gradient(to right, #378fe6, #00a9f0, #00bfde, #00cfb6, #3eda82);;
+                    transition: .4s ease-in-out;
+                }
+
+                input:checked + .slider:before {
+                    transition: .4s ease-in-out;
+                    transform: translateX(29px);
+                }
+            }
+        }
+        
+
+    }
+    
+    // SOCIALS CONTAINER
+    .socials__container {
+        display: grid;
+        margin-bottom: 2rem;
+        
+        .block__class {
+            position: relative;
+            max-width: 40rem;
+            height: 15.2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.3rem;
+            transition: .4s ease-in-out;
+
+            .card {
+                cursor: pointer;
+                display: grid;
+                justify-content:center;
+                align-items:center;
+                position: absolute;
+                top: 0.4rem;
+                height: 15.2rem;
+                width: 100%;
+                padding: 1.5rem 0;
+                border-radius: 0 0 0.5rem 0.5rem;
+                background: $LightGrayishBlueCardBG;
+                transition: .4s ease-in-out;
+
+                &:hover {
+                    background: hsl(230, 20%, 88%);
+                    transition: .4s ease-in-out;
+                }
+                
+                .card__social {
+                    display: flex;
+                    justify-content:center;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 1.1rem;
+                    text-align: center;
+                    color: $DarkGrayishBlueText;
+                    font-weight: 700;
+                    
+                    img {
+                        margin-right: .5rem;
+                    }
+                }
+                
+                .followers {
+                    text-align: center;
+                    
+                    h1 {
+                        font-size: 4rem;
+                    }
+                    
+                    p{
+                        color: $DarkGrayishBlueText;
+                        letter-spacing: 5px;
+                    }
+                }
+                
+                .today {
+                    display: flex;
+                    justify-content:center;
+                    align-items: center;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    
+                    img {
+                        height: 100%;
+                        margin-right: 5px;
+                    }
+                    
+                    .green {
+                        color: $LimeGreen;
+                    }
+                    
+                    .red {
+                        color: $BrightRed;
+                    }
+                }
+            }
+        }
+        .facebook {
+            background: $Facebook;
+        }
+        .twitter {
+            background: $Twitter;
+        }
+        .instagram {
+            background: $Instagram;
+        }
+        .youtube {
+            background: $YouTube;
+        }
+    }
+}
+
+.overview__header {
+    color: $DarkGrayishBlueText;
+    margin: 1.5rem 0
+}
+
+// OVERVIEW
+.overview__container {
+    display: grid;
+
+    .overview {
+        cursor: pointer;
+        max-width: 40rem;
+        padding: 1.5rem 2.5rem;
+        padding-top: 2rem;
+        background: $LightGrayishBlueCardBG;
+        margin-bottom: 1rem;
+        border-radius: .5rem;
+        transition: .4s ease-in-out;
+
+        &:hover {
+            background: hsl(230, 20%, 88%);
+            transition: .4s ease-in-out;
+        }
+
+        .overview__title{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: $DarkGrayishBlueText;
+        }
+        
+        .overview__results {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+
+            h2 {
+                display: flex;
+                font-weight: 700;
+                font-size: 2rem;
+                transition: .4s ease-in-out;
+            }
+            
+            .result {
+                display: flex;
+                align-items: center;
+                font-size: 1.2rem;
+                font-weight: 700;
+
+                .green {
+                    color: $LimeGreen;
+                }
+
+                .red {
+                    color: $BrightRed;
+                }
+            }
+        }
+    }
+}
+
+// LAPTOP SIZE
+@media screen and (min-width: 728px){
+    .wrapper {
+        max-width: 85vw;
+
+        .header {
+            grid-template-columns: 50% 50%;
+    
+            hr {
+                display: none;
+            }
+    
+            .header__right {
+                justify-content: flex-end;
+            }
+        }
+
+        .overview__header {
+            margin: .5rem 0;
+            font-size: 1rem;
+        }
+    
+        .socials__container {
+            display: grid;
+            max-width: 85vw;
+            grid-template-columns: 22% 22% 22% 22%;
+            justify-content: space-between;
+            column-gap: 2%;
+            max-width: 85vw;
+            grid-template-columns: 22% 22% 22% 22%;
+            justify-content: space-between;
+            column-gap: 2%;
+            
+
+            .block__class {
+                max-height: 10.3rem;
+                margin-bottom: 0;
+                
+                .card {
+                    max-height: 10.1rem;
+                    padding: .5rem 0;
+                    transition: .4s ease-in-out;
+    
+                    .card__social {
+                        font-size: .8rem;
+                    }
+
+                    .followers {
+                        h1{
+                            font-size: 2.4rem;
+                        }
+
+                        p {
+                            font-size: .5rem;
+                        }
+                    }
+
+                    .today {
+                        p {
+                            font-size: .7rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .overview__container {
+            grid-template-columns: 24% 24% 24% 24%;
+            max-width: 85vw;
+            grid-template-columns: 22% 22% 22% 22%;
+            justify-content: space-between;
+            column-gap: 2%;
+            row-gap: 10%;
+    
+            .overview {
+                padding: 1rem 1.5rem;
+                margin: 0;
+
+                .overview__title {
+                    font-size: .5rem;
+                    padding: 0;
+                }
+
+                .overview__results {
+                    margin-top: 1rem;
+                    h2 {
+                        font-size: 1.5rem;
+                    }
+
+                    .result {
+                        font-size: .7rem;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+// LARGE LAPTOP
+@media screen and (min-width: 1440px){
+    .wrapper {
+        max-width: 85vw;
+
+        .header {
+            grid-template-columns: 50% 50%;
+    
+            hr {
+                display: none;
+            }
+    
+            .header__right {
+                justify-content: flex-end;
+            }
+        }
+
+        .overview__header {
+            margin: .5rem 0;
+        }
+    
+        .socials__container {
+            display: grid;
+            max-width: 85vw;
+            grid-template-columns: 22% 22% 22% 22%;
+            justify-content: space-between;
+            column-gap: 2%;
+            max-width: 85vw;
+            grid-template-columns: 22% 22% 22% 22%;
+            justify-content: space-between;
+            column-gap: 2%;
+            
+
+            .block__class {
+                max-height: 13.3rem;
+                margin-bottom: 0;
+                
+                .card {
+                    max-height: 13.1rem;
+                    padding: .5rem 0;
+                    transition: .4s ease-in-out;
+    
+                    .card__social {
+                        font-size: 1rem;
+                    }
+
+                    .followers {
+                        h1{
+                            font-size: 3rem;
+                        }
+
+                        p {
+                            font-size: .7rem;
+                        }
+                    }
+
+                    .today {
+                        p {
+                            font-size: .9rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .overview__container {
+            grid-template-columns: 24% 24% 24% 24%;
+            max-width: 85vw;
+            grid-template-columns: 22% 22% 22% 22%;
+            justify-content: space-between;
+            column-gap: 2%;
+            row-gap: 10%;
+    
+            .overview {
+                margin: 0;
+            }
+        }
+    }
+    
+}
